@@ -1,0 +1,39 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: gray;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+.animation-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.two-frames {
+  display: grid;
+  grid-template-areas: 
+    "grafic grafic chat";
+  grid-template-columns: 1fr 1fr;
+} 
+
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .two-frames {
+    grid-template-columns: 1fr 1fr 30rem;
+    gap:3rem;
+  }
+  
+}
