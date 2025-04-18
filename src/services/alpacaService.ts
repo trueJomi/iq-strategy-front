@@ -34,19 +34,19 @@ export function getIntervalTime(intervalo: EIntervalo) {
             today.setMonth(today.getMonth() - 6)
             return {
                 start_time: today,
-                timeframe: '1W'
+                timeframe: '1D'
             }
         case EIntervalo.UN_ANO:
             today.setFullYear(today.getFullYear() - 1)
             return {
                 start_time: today,
-                timeframe: '1W'
+                timeframe: '1D'
             }
         case EIntervalo.CINCO_ANOS:
             today.setFullYear(today.getFullYear() - 5)
             return {
                 start_time: today,
-                timeframe: '1M'
+                timeframe: '1W'
             }
     }
 }
@@ -123,9 +123,9 @@ export async function getCurrentPrice (symbols: string[]) {
         const { message } = await response.json()
         throw new Error(message)
     }
-    console.log("response", symbols)
+    // console.log("response", symbols)
     const { bars } = await response.json()
-    console.log( "test", bars)
+    // console.log( "test", bars)
     const data: JsonAlpaca[] = symbols.map(symbol =>{
         return {
             ...bars[symbol][0],

@@ -20,7 +20,7 @@ function GraficCompoent({ current }: Props) {
   const [historicalData, setHistoricalData] = useState<ResultAlpaca[]>()
   const { predictions, setPredictions } = usePredictionsStore(state => state)
   const interval = useMemo(() => {
-    const interval = searchParams.get('interval') as EIntervalo ?? EIntervalo.UN_MES
+    const interval = searchParams.get('interval') as EIntervalo ?? EIntervalo.UN_ANO
     return interval
   }, [searchParams])
 

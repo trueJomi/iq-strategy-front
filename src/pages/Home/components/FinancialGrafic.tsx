@@ -10,7 +10,7 @@ const optionsBelas: ApexOptions = {
   chart: {
     type: "candlestick",
     width: '100%',
-    id: "actions",
+    id: 'candles',
     toolbar: {
       autoSelected: "pan",
       show: false,
@@ -34,7 +34,7 @@ const optionsBelas: ApexOptions = {
 
 const opctionsVolumenGenerate = (lastDate: Date): ApexOptions => {
     const minDate = new Date(lastDate)
-    minDate.setDate(lastDate.getDate() - 10)
+    minDate.setMonth(minDate.getMonth() - 1)
     return {
         chart: {
             type: 'bar',
@@ -123,6 +123,8 @@ function FinancialGrafic({ data }: Props) {
           }
       ]
   }, [data])
+  // console.log(seriesVolumen)
+  // console.log(optionsVolumen)
 
   return (
     <div style={{
@@ -139,6 +141,7 @@ function FinancialGrafic({ data }: Props) {
           options={optionsVolumen}
           series={seriesVolumen}
           type='bar'
+          height={160}
         />
       </div>
     </div>

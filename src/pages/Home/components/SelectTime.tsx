@@ -12,7 +12,7 @@ function SelectTime() {
     const [searchParams, setSearchParams] = useSearchParams()
 
     const interval = useMemo(() => {
-        const interval = searchParams.get('interval') as EIntervalo ?? EIntervalo.UN_MES
+        const interval = searchParams.get('interval') as EIntervalo ?? EIntervalo.UN_ANO
         return interval
       }, [searchParams])
     
