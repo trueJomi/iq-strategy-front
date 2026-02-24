@@ -1,6 +1,6 @@
 import { adapterFirebaseToFolder } from "../adapters/folder.adapter";
 import { Action } from "../models/action.model";
-import { Folder, FolderBase } from "../models/forlder.model";
+import { Folder, FolderBase, FolderFire } from "../models/forlder.model";
 import { TransactionBase } from "../models/Transactions.model";
 import { getUser } from "./AuthService";
 import { createDocumentWithId, getCollectionCallback, getData, refDocument, updateData } from "./comonService";
@@ -29,7 +29,7 @@ export async function getFolder( id: string ) {
     return data
 }
 
-export async function createFolder(id:string, data: FolderBase ) {
+export async function createFolder(id:string, data: FolderFire ) {
     const user = getUser()
     await createDocumentWithId(`User/${user.uid}/folder`, id, data)
 }
@@ -49,7 +49,7 @@ export async function updateFolder( data: TransactionBase ) {
         createFolder( data.action.id, {
             action: refDocument(`User/${user.uid}/folder`, data.action.id),
             countActions: data.value,
-            totalValue: data.amount,
+            totalValue: data.amount
         })
     }
 

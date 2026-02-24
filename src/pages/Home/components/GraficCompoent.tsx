@@ -22,7 +22,7 @@ function GraficCompoent({ current }: Props) {
   const interval = useMemo(() => {
     const interval = searchParams.get('interval') as EIntervalo ?? EIntervalo.UN_ANO
     return interval
-  }, [searchParams])
+  }, [searchParams]) 
 
   useEffect(() => {
     if (current === undefined) return

@@ -20,11 +20,11 @@ const nav: LayoutNav[] = [
     path: '/history',
     icon: MdHistory
   },
-  {
-    name: 'Indicadores',
-    path: '/indicators',
-    icon: MdBarChart
-  }
+  // {
+  //   name: 'Indicadores',
+  //   path: '/indicators',
+  //   icon: MdBarChart
+  // }
 ]
 
 
