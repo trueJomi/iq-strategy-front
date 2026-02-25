@@ -1,50 +1,102 @@
-# React + TypeScript + Vite
+# 🚀 IQ Strategy Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma avanzada de visualización y ejecución de estrategias de trading, construida con tecnologías modernas para ofrecer una experiencia fluida, reactiva y profesional.
 
-Currently, two official plugins are available:
+## 📋 Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**IQ Strategy Frontend** es el centro de control para traders que buscan gestionar sus estrategias, visualizar predicciones de mercado y ejecutar operaciones en tiempo real. La aplicación integra análisis visual mediante gráficos avanzados y un sistema de chat interactivo para el seguimiento de señales y soporte.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Stack Tecnológico
 
-- Configure the top-level `parserOptions` property like this:
+La aplicación utiliza un ecosistema tecnológico de última generación para garantizar rendimiento y escalabilidad:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Core:** [React 18](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/) (con SWC para compilación ultra rápida)
+- **UI Framework:** [Material UI (MUI) v6](https://mui.com/)
+- **Estado Global:** [Zustand](https://github.com/pmndrs/zustand)
+- **Gráficos:** [ApexCharts](https://apexcharts.com/)
+- **Backend-as-a-Service:** [Firebase](https://firebase.google.com/) (Authentication, Firestore, Hosting)
+- **Routing:** [React Router 6](https://reactrouter.com/)
+- **Iconos:** [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+## ✨ Características Principales
+
+- 📊 **Visualización de Gráficos:** Gráficos interactivos en tiempo real para el seguimiento de activos.
+- 💰 **Gestión de Operaciones:** Interfaz intuitiva para compra/venta de activos integrando servicios como Alpaca.
+- 💬 **Chat Integrado:** Sistema de mensajería para interacción y recepción de notificaciones de estrategias.
+- 🔐 **Autenticación Segura:** Sistema completo de Login y Registro gestionado por Firebase.
+- 📱 **Diseño Responsivo:** Layout adaptativo que optimiza la visualización de gráficos y chat en PC y dispositivos móviles.
+- 📜 **Historial de Transacciones:** Registro detallado de movimientos y operaciones realizadas.
+- 📂 **Gestión de Carpetas/Estrategias:** Organización personalizada de acciones y predicciones.
+
+---
+
+## 🚀 Configuración del Proyecto
+
+### 1. Requisitos Previos
+
+- [Node.js](https://nodejs.org/) (versión 18 o superior recomendada)
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
+
+### 2. Instalación
+
+Clona el repositorio e instala las dependencias:
+
+```bash
+# Instalar dependencias
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 3. Configuración de Variables de Entorno
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Crea un archivo `.env` en la raíz del proyecto y añade tus credenciales de Firebase:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```env
+VITE_FIREBASE_API_KEY=tu_api_key
+VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain
+VITE_FIREBASE_PROJECT_ID=tu_project_id
+VITE_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+VITE_FIREBASE_APP_ID=tu_app_id
 ```
+
+### 4. Ejecución
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173`.
+
+---
+
+## 📂 Estructura de Carpetas
+
+```text
+src/
+├── adapters/   # Transformación de datos externos
+├── components/ # Componentes globales reutilizables
+├── constants/  # Constantes y configuraciones
+├── hooks/      # Hooks personalizados (Auth, API, etc.)
+├── libs/       # Configuraciones de librerías externas (Firebase)
+├── models/     # Definiciones de tipos e interfaces
+├── pages/      # Vistas principales (Home, Login, History, etc.)
+├── services/   # Llamadas a Firebase y APIs externas
+└── store/      # Gestión de estado con Zustand
+```
+
+---
+
+## 🛠️ Comandos Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Compila el proyecto para producción.
+- `npm run lint`: Ejecuta el linter para asegurar la calidad del código.
+- `npm run preview`: Previsualiza la compilación localmente.
+
